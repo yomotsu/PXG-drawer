@@ -1,7 +1,20 @@
 PXG-sidePanel
 ===========
 
-PXG-sidePanel is probide Facebook like side menu
+PXG-sidePanel provides Facebook like side menu. PXG-sidePanel is like an independent component and post-attachable to your web page
+
+PXG-sidePanel は Facebook のようなサイドメニューを実現できます。独立したコンポーネントになっているため、後付けであなたの Web ページに追加することもできます。
+
+## Supported
+
+- IE9 (no animation)
+- IE10 and above (still has some anim bug, but i will work on it soon)
+- Chrome
+- Firefox
+- Safari
+- iOS Safari
+
+Not tested on Android but supposed to work, hopefully...
 
 ## Examples
 
