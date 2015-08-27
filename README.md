@@ -1,28 +1,15 @@
 PXG-sidePanel
 ===========
 
-PXG-sidePanel provides Facebook like side menu. PXG-sidePanel is like an independent component and post-attachable to your web page!
-
-PXG-sidePanel は Facebook のようなサイドメニューを実現します。PXG-sidePanel は独立したコンポーネントで、後付けすることもできます。
-
-## suppoted
-
-- IE9 (no animation)
-- IE10 and above
-- Chrome
-- Firefox
-- Safari
-- iOS Safari
-
-Not tested on Android, hopefully it works...
+PXG-sidePanel is probide Facebook like side menu
 
 ## Examples
 
-- [Plane](http://yomotsu.github.io/PXG-sidePanel/example/plane.html)
+- [Plane](http://yomotsu.github.io/PXG-sidePanel/examples/plane.html)
 
 ## Usage
 
-Include css and js file.
+Just include css and js file.
 
 ```html
 <link rel="stylesheet" href="PXG-sidePanel.css">
@@ -36,7 +23,6 @@ Then, put the menu in the `body` element
 
 <div class="PXG-sidePanel">
 	<div class="PXG-sidePanel__inner">
-		you can modify in the inner
 		<ul>
 			<li>nav item1</li>
 			<li>nav item2</li>
