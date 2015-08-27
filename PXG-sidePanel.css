@@ -1,0 +1,43 @@
+html{
+	position: relative;
+}
+body{
+	box-sizing: content-box;
+	position: relative;
+	left: 0;
+	width: 100%;
+	margin: 0;
+	transition: left .4s;
+}
+html.js-sidePanel--show,
+html.js-sidePanel--show body{
+	overflow: hidden;
+	height: 100%;
+}
+html.js-sidePanel--show body{
+	position: absolute;
+	left: -webkit-calc( -100% + 20px );
+	left: -moz-calc( -100% + 20px );
+	left: calc( -100% + 20px );
+}
+.PXG-sidePanel{
+	position: fixed;
+	top: 0;
+	left: 100%;
+	width: 100%;
+	height: 100%;
+	background: rgba( 0, 0, 0, 0 );
+	transition: left .4s;
+}
+.PXG-sidePanel__inner{
+	overflow: auto;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	padding-left: 20px;
+	margin: 0 0 0 auto;
+	-webkit-overflow-scrolling: touch;
+}
+html.js-sidePanel--show .PXG-sidePanel{
+	left: 0;
+}
