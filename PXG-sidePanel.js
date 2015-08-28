@@ -9,7 +9,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
   'use strict';
 
   var i = 0;
-  var modifier = 'js-sidePanel--show'
+  var modifier = 'js-sidePanel--show';
   var html = document.documentElement;
   var body = document.body
   var scrollTop;
@@ -42,9 +42,11 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   } )();
 
-  var openEl, closeEl;
-  var openEls  = document.querySelectorAll( '[data-sidepanel-show]' );
-  var closeEls = document.querySelectorAll( '[data-sidepanel-hide]' );
+  var isHidden = true;
+  var openEl, closeEl, toggleEl;
+  var openEls   = document.querySelectorAll( '[data-sidepanel-show]' );
+  var closeEls  = document.querySelectorAll( '[data-sidepanel-hide]' );
+  var toggleEls = document.querySelectorAll( '[data-sidepanel-toggle]' );
 
   for ( i = 0, openEl; openEl = openEls[ i ]; i = ( i + 1 )|0 ) {
 
@@ -58,11 +60,20 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   }
 
+  for ( i = 0, toggleEl; toggleEl = toggleEls[ i ]; i = ( i + 1 )|0 ) {
+
+    toggleEl.addEventListener( 'click', navToggle );
+
+  }
+
   function navOpen () {
 
+    if ( !isHidden ) { return; }
+
+    isHidden = false;
     scrollTop = html.scrollTop || body.scrollTop;
     html.className += ' ' + modifier;
-    html.style.paddingLeft   = scrollbarWidth + 'px';
+    html.style.paddingRight  = scrollbarWidth + 'px';
     body.style.top           = -scrollTop     + 'px';
     body.style.paddingBottom =  scrollTop     + 'px';
 
@@ -70,12 +81,29 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   function navClose () {
 
+    if ( isHidden ) { return; }
+
     var re = new RegExp( ' ' + modifier );
+    isHidden = true;
     html.className = html.className.replace( re, '' );
-    html.style.paddingLeft   = 0;
+    html.style.paddingRight  = 0;
     body.style.top           = 0;
     body.style.paddingBottom = 0;
     window.scrollTo( 0, scrollTop );
+
+  };
+
+  function navToggle () {
+
+    if ( isHidden ) {
+
+      navOpen();
+
+    } else {
+
+      navClose();
+
+    }
 
   };
 
