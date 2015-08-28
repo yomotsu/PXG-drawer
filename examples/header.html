@@ -5,19 +5,21 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>=^.^=</title>
-<link rel="stylesheet" href="../PXG-sidePanel.css">
-<script src="../PXG-sidePanel.js"></script>
+<link rel="stylesheet" href="../PXG-drawer.css">
+<script src="../PXG-drawer.js"></script>
 <style>
 .myHeader{
-	text-align: right;
-	box-sizing: border-box;
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 1;
+	z-index: 3;
 	width: 100%;
 	background: rgba( 0, 0, 0, .5 );
 	transition: left .4s, margin-left .4s;
+}
+html.js-drawer--show .myHeader{
+	left: -100%;
+	margin-left: 40px;
 }
 .myHeader button{
 	color: #868686;
@@ -32,59 +34,57 @@
 	border: none;
 	background: #191919;
 }
-html.js-sidePanel--show .myHeader{
-	left: -100%;
-	margin-left: 40px;
-}
-.PXG-sidePanel__inner .myNavBody{
+.PXG-drawer{
 	color: #868686;
-	box-sizing: border-box;
-	padding: 1px 0;
+}
+.PXG-drawer__bg:after{
 	background: #191919;
-	min-height: 100%;
 }
 </style>
 </head>
 <body>
 
 <div class="myHeader">
-	<button data-sidepanel-toggle>=</button>
+	<button data-drawer-toggle>=</button>
 </div>
 
-<div class="PXG-sidePanel">
-	<div class="PXG-sidePanel__inner">
-		<div class="myNavBody">
-			<ul>
-				<li>nav item1</li>
-				<li>nav item2</li>
-				<li>nav item3</li>
-				<li>nav item4</li>
-				<li>nav item5</li>
-				<li>nav item6</li>
-				<li>nav item7</li>
-				<li>nav item8</li>
-				<li>nav item9</li>
-				<li>nav item1</li>
-				<li>nav item2</li>
-				<li>nav item3</li>
-				<li>nav item4</li>
-				<li>nav item5</li>
-				<li>nav item6</li>
-				<li>nav item7</li>
-				<li>nav item8</li>
-				<li>nav item9</li>
-				<li>nav item1</li>
-				<li>nav item2</li>
-				<li>nav item3</li>
-				<li>nav item4</li>
-				<li>nav item5</li>
-				<li>nav item6</li>
-				<li>nav item7</li>
-				<li>nav item8</li>
-				<li>nav item9</li>
-			</ul>
+<div class="PXG-drawer">
+	<div class="PXG-drawer__panel">
+		<div class="PXG-drawer__panelViewport">
+			<div class="PXG-drawer__panelBody">
+				<ul style="margin: 0;">
+					<li>nav item1</li>
+					<li>nav item2</li>
+					<li>nav item3</li>
+					<li>nav item4</li>
+					<li>nav item5</li>
+					<li>nav item6</li>
+					<li>nav item7</li>
+					<li>nav item8</li>
+					<li>nav item9</li>
+					<li>nav item1</li>
+					<li>nav item2</li>
+					<li>nav item3</li>
+					<li>nav item4</li>
+					<li>nav item5</li>
+					<li>nav item6</li>
+					<li>nav item7</li>
+					<li>nav item8</li>
+					<li>nav item9</li>
+					<li>nav item1</li>
+					<li>nav item2</li>
+					<li>nav item3</li>
+					<li>nav item4</li>
+					<li>nav item5</li>
+					<li>nav item6</li>
+					<li>nav item7</li>
+					<li>nav item8</li>
+					<li>nav item9</li>
+				</ul>
+			</div>
 		</div>
 	</div>
+	<div class="PXG-drawer__bg"></div>
 </div>
 
 

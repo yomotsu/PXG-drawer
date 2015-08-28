@@ -1,6 +1,6 @@
 /**
  * @author yomotsu / http://yomotsu.net
- * repository: https://github.com/yomotsu/PXG-sidePanel
+ * repository: https://github.com/yomotsu/PXG-drawer
  *
  */
 
@@ -9,9 +9,9 @@ window.addEventListener( 'DOMContentLoaded', function () {
   'use strict';
 
   var i = 0;
-  var modifier = 'js-sidePanel--show';
+  var modifier = 'js-drawer--show';
   var html = document.documentElement;
-  var body = document.body
+  var body = document.body;
   var scrollTop;
   var scrollbarWidth = ( function () {
 
@@ -44,9 +44,9 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   var isHidden = true;
   var openEl, closeEl, toggleEl;
-  var openEls   = document.querySelectorAll( '[data-sidepanel-show]' );
-  var closeEls  = document.querySelectorAll( '[data-sidepanel-hide]' );
-  var toggleEls = document.querySelectorAll( '[data-sidepanel-toggle]' );
+  var openEls   = document.querySelectorAll( '[data-drawer-show]' );
+  var closeEls  = document.querySelectorAll( '[data-drawer-hide]' );
+  var toggleEls = document.querySelectorAll( '[data-drawer-toggle]' );
 
   for ( i = 0, openEl; openEl = openEls[ i ]; i = ( i + 1 )|0 ) {
 
