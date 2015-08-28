@@ -13,8 +13,9 @@ PXG-drawer は Facebook のようなサイドメニューを実現できます�
 - Firefox
 - Safari
 - iOS Safari
+- Android Browser 4.3
 
-Not tested on Android but supposed to work, hopefully...
+Not tested on Android 4.2 and below but supposed to work, hopefully...
 
 ## Examples
 

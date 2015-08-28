@@ -8,10 +8,6 @@ body{
 	left: 0;
 	width: 100%;
 	margin: 0;
-	-webkit-transition: left .4s, margin-left .4s;
-	   -moz-transition: left .4s, margin-left .4s;
-	    -ms-transition: left .4s, margin-left .4s;
-	        transition: left .4s, margin-left .4s;
 }
 html.js-drawer--show,
 html.js-drawer--show body{
@@ -25,32 +21,27 @@ html.js-drawer--show body{
 	left: 100%;
 	width: 100%;
 	height: 100%;
-	margin-left: -40px;
 	background: rgba( 0, 0, 0, 0 );
-	-webkit-transform: translate( 0, 0, 0 );
-	   -moz-transform: translate( 0, 0, 0 );
-	    -ms-transform: translate( 0, 0, 0 );
-	        transform: translate( 0, 0, 0 );
-	-webkit-transition: left .4s, margin-left .4s;
-	   -moz-transition: left .4s, margin-left .4s;
-	    -ms-transition: left .4s, margin-left .4s;
-	        transition: left .4s, margin-left .4s;
+	-webkit-transform: translateX( -40px );
+	    -ms-transform: translateX( -40px );
+	        transform: translateX( -40px );
+	-webkit-transition: -webkit-transform .4s;
+	        transition:         transform .4s;
 }
 html:not( .js-drawer--show ) .PXG-drawer__panel {
 	-webkit-animation-name: zIndexOut;
-	   -moz-animation-name: zIndexOut;
 	        animation-name: zIndexOut;
 	-webkit-animation-duration: .4s;
-	   -moz-animation-duration: .4s;
 	        animation-duration: .4s;
 	-webkit-animation-iteration-count: 1;
-	   -moz-animation-iteration-count: 1;
 	        animation-iteration-count: 1;
 }
 html.js-drawer--show .PXG-drawer__panel {
-	left: 0;
 	margin-left: 0;
 	z-index: 2;
+	-webkit-transform: translateX( -100% );
+	    -ms-transform: translateX( -100% );
+	        transform: translateX( -100% );
 }
 .PXG-drawer__panelViewport {
 	overflow: auto;
@@ -67,8 +58,6 @@ html.js-drawer--show .PXG-drawer__panel {
 	min-height: 100%;
 	box-shadow: -2px 2px 4px rgba( 0, 0, 0, 0 );
 	-webkit-transition: box-shadow .4s;
-	   -moz-transition: box-shadow .4s;
-	    -ms-transition: box-shadow .4s;
 	        transition: box-shadow .4s;
 }
 html.js-drawer--show .PXG-drawer__panelBody{
@@ -78,8 +67,6 @@ html.js-drawer--show .PXG-drawer__panelBody{
 .PXG-drawer__bg {
 	background: rgba( 0, 0, 0, 0 );
 	-webkit-transition: background .4s;
-	   -moz-transition: background .4s;
-	    -ms-transition: background .4s;
 	        transition: background .4s;
 }
 .PXG-drawer__bg:after{
@@ -88,13 +75,14 @@ html.js-drawer--show .PXG-drawer__panelBody{
 	top: 0;
 	right: 0;
 	bottom: 0;
-	left: 100%;
+	left: 0;
 	display: block;
 	background: #FFF;
-	-webkit-transition: left .4s;
-	   -moz-transition: left .4s;
-	    -ms-transition: left .4s;
-	        transition: left .4s;
+	-webkit-transform: translateX( 100% );
+	    -ms-transform: translateX( 100% );
+	        transform: translateX( 100% );
+	-webkit-transition: -webkit-transform .4s;
+	        transition:         transform .4s;
 }
 html.js-drawer--show .PXG-drawer__bg {
 	position: fixed;
@@ -106,16 +94,12 @@ html.js-drawer--show .PXG-drawer__bg {
 	background: rgba( 0, 0, 0, 0.3 );
 }
 html.js-drawer--show .PXG-drawer__bg:after{
-	left: 40px;
+	-webkit-transform: translateX( 40px );
+	    -ms-transform: translateX( 40px );
+	        transform: translateX( 40px );
 }
 
 @-webkit-keyframes zIndexOut {
-	  0% { z-index:  2; }
-	 99% { z-index:  2; }
-	100% { z-index: -1; }
-}
- 
-@-moz-keyframes zIndexOut {
 	  0% { z-index:  2; }
 	 99% { z-index:  2; }
 	100% { z-index: -1; }

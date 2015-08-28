@@ -15,11 +15,13 @@
 	z-index: 3;
 	width: 100%;
 	background: rgba( 0, 0, 0, .5 );
-	transition: left .4s, margin-left .4s;
+	-webkit-transition: -webkit-transform .4s;
+	        transition:         transform .4s;
 }
 html.js-drawer--show .myHeader{
-	left: -100%;
-	margin-left: 40px;
+	-webkit-transform: translateX( -100% ) translateX( 40px );
+	    -ms-transform: translateX( -100% ) translateX( 40px );
+	        transform: translateX( -100% ) translateX( 40px );
 }
 .myHeader button{
 	color: #868686;
