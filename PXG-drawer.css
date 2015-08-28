@@ -65,10 +65,30 @@ html.js-drawer--show .PXG-drawer__panelBody{
 }
 
 .PXG-drawer__bg {
+	position: fixed;
+	z-index: -1;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	background: rgba( 0, 0, 0, 0 );
 	-webkit-transition: background .4s;
 	        transition: background .4s;
 }
+html:not( .js-drawer--show ) .PXG-drawer__bg {
+	-webkit-animation-name: bgOut;
+	        animation-name: bgOut;
+	-webkit-animation-duration: .4s;
+	        animation-duration: .4s;
+	-webkit-animation-iteration-count: 1;
+	        animation-iteration-count: 1;
+}
+html.js-drawer--show .PXG-drawer__bg {
+	z-index: 1;
+	background: rgba( 0, 0, 0, 0.3 );
+}
+
+
 .PXG-drawer__bg:after{
 	content: '';
 	position: absolute;
@@ -84,19 +104,22 @@ html.js-drawer--show .PXG-drawer__panelBody{
 	-webkit-transition: -webkit-transform .4s;
 	        transition:         transform .4s;
 }
-html.js-drawer--show .PXG-drawer__bg {
-	position: fixed;
-	z-index: 1;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba( 0, 0, 0, 0.3 );
-}
 html.js-drawer--show .PXG-drawer__bg:after{
 	-webkit-transform: translateX( 40px );
 	    -ms-transform: translateX( 40px );
 	        transform: translateX( 40px );
+}
+
+@-webkit-keyframes bgOut {
+	  0% { z-index:  1; }
+	 99% { z-index:  1; }
+	100% { z-index: -1; }
+}
+
+@keyframes bgOut {
+	  0% { z-index:  1; }
+	 99% { z-index:  1; }
+	100% { z-index: -1; }
 }
 
 @-webkit-keyframes zIndexOut {
